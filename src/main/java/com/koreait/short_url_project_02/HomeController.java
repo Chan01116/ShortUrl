@@ -8,6 +8,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class HomeController {
 
+
+
+
     @Value("${custom.site.name}")
     private String customSiteName;
 
