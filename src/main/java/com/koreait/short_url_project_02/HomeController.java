@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class HomeController {
+
     @Value("${custom.site.name}")
     private String customSiteName;
 
@@ -16,11 +17,12 @@ public class HomeController {
     @GetMapping("/")
     @ResponseBody
     public String home() {
-        return "Main Page!!!!!! " + customSiteName;
+        return "Main Page!!! " + customSiteName;
     }
-    @GetMapping("secretKey")
+
+    @GetMapping("/secretKey")
     @ResponseBody
     public String secretKey() {
-        return "secretKey" + secretKey;
+        return "secretKey :  " + secretKey;
     }
 }
