@@ -1,4 +1,3 @@
-
 package com.koreait.short_url_project_02.global.rq.Rq;
 
 import com.koreait.short_url_project_02.domain.member.member.entity.Member;
