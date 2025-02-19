@@ -1,17 +1,22 @@
 server:
   port: 8080
 spring:
-profiles:
-  active: dev
-  include: secret
-datasource:
-  url: jdbc:h2:.db_dev;MODE=MySQL
-  username: postgres
-  password: acL1WL6ul5LEzNe
-  driver-class-name: org.h2.Driver
-custom:
-  site:
-    name: "My site prod"
+  output:
+    ansi:
+      enabled: always
+  datasource:
+    url: jdbc:mysql://172.17.0.1:3306/surl_prod
+    username: root
+    password: 1234
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: false
+        highlight_sql: false
+        use_sql_comments: false
 logging:
   level:
     com.koreait.short_url_project_02: INFO
@@ -19,3 +24,7 @@ logging:
     org.hibernate.orm.jdbc.bind: INFO
     org.hibernate.orm.jdbc.extract: INFO
     org.springframework.transaction.interceptor: INFO
+custom:
+  site:
+    name: "My site prod"
+
