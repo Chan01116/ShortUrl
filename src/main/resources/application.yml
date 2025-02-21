@@ -4,6 +4,10 @@ spring:
   profiles:
     active: dev
     include: secret
+  autoconfigure:  #오류방지
+    exclude:
+      - org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration
+      - org.springframework.boot.autoconfigure.session.SessionAutoConfiguration
   datasource:
 #    url: jdbc:postgresql://localhost:5432/surl_dev
 #    username: postgres

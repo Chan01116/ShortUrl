@@ -1,6 +1,12 @@
 server:
   port: 8080
+  shutdown: graceful
 spring:
+  autoconfigure:
+    exclude:
+  lifecycle:
+    #스프링부트가 종료 요청을 받은 후에 디가릴 수 있는 시간 설정
+    timeout-per-shutdown-phase: 1h
   output:
     ansi:
       enabled: always
@@ -9,6 +15,11 @@ spring:
     username: root
     password: 1234
     driver-class-name: com.mysql.cj.jdbc.Driver
+  data:
+    redis:
+      host: 172.17.0.1
+      port: 6379
+      password: ${custom.secret.spring.data.redis.password}
   jpa:
     hibernate:
       ddl-auto: update

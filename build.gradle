@@ -37,6 +37,10 @@ dependencies {
     runtimeOnly 'org.postgresql:postgresql'
     runtimeOnly 'com.h2database:h2'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+
+    implementation 'org.springframework.boot:spring-boot-starter-actuator'  // api가 저 스프링부트가 이용이 가능한지  새컨테이너로 언제 하는지
+    implementation 'org.springframework.boot:spring-boot-starter-data-redis' // 세션임시저장 하는 타이밍에서 로그인 풀리지 않게
+    implementation 'org.springframework.session:spring-session-data-redis' //
 }
 
 tasks.named('test') {
